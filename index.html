@@ -1,159 +1,226 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Débora Freire - Dev Full Stack</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap" rel="stylesheet"/>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #0f0f1a;
-      color: #fff;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Débora Freire - Dev Full Stack</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #0f0f1a;
+            color: #fff;
+            overflow-x: hidden;
+        }
 
-    .container {
-      max-width: 960px;
-      margin: auto;
-      padding: 2rem;
-    }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
 
-    .profile {
-      text-align: center;
-      background: linear-gradient(135deg, #3c0b5f, #5e2b8f);
-      padding: 2rem;
-      border-radius: 20px;
-      margin-top: 2rem;
-    }
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-    .profile img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      border: 4px solid #fff;
-      object-fit: cover;
-    }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            padding: 2rem;
+        }
 
-    .profile h1 {
-      margin: 1rem 0 0.5rem;
-      font-size: 2.2rem;
-    }
+        .profile {
+            text-align: center;
+            background: linear-gradient(135deg, #3c0b5f, #5e2b8f);
+            padding: 2rem;
+            border-radius: 20px;
+            margin-top: 2rem;
+        }
 
-    .tag {
-      background: #8f48ff;
-      padding: 0.4rem 1rem;
-      border-radius: 999px;
-      display: inline-block;
-      color: #fff;
-      font-weight: bold;
-    }
+        .profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            object-fit: cover;
+        }
 
-    .section {
-      margin-top: 2.5rem;
-    }
+        .profile h1 {
+            margin: 1rem 0 0.5rem;
+            font-size: 2.2rem;
+            animation: popIn 1s ease-out;
+        }
 
-    .section h2 {
-      color: #8f48ff;
-      border-left: 5px solid #8f48ff;
-      padding-left: 1rem;
-      margin-bottom: 1rem;
-    }
+        .tag {
+            background: #8f48ff;
+            padding: 0.4rem 1rem;
+            border-radius: 999px;
+            display: inline-block;
+            color: #fff;
+            font-weight: bold;
+        }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.2rem;
-    }
+        .section {
+            margin-top: 2.5rem;
+        }
 
-    .card {
-      background: #1d1d2b;
-      padding: 1rem;
-      border-radius: 12px;
-    }
+        .section h2 {
+            color: #8f48ff;
+            border-left: 5px solid #8f48ff;
+            padding-left: 1rem;
+            margin-bottom: 1rem;
+        }
 
-    .skills span {
-      display: inline-block;
-      background: #333856;
-      color: #fff;
-      padding: 0.4rem 0.8rem;
-      border-radius: 5px;
-      margin: 5px 5px 0 0;
-    }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.2rem;
+        }
 
-    footer {
-      text-align: center;
-      margin-top: 3rem;
-      color: #aaa;
-      padding-bottom: 1rem;
-    }
-  </style>
+        .card {
+            background: #1d1d2b;
+            padding: 1rem;
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .skills span {
+            display: inline-block;
+            background: #333856;
+            color: #fff;
+            padding: 0.4rem 0.8rem;
+            border-radius: 5px;
+            margin: 5px 5px 0 0;
+            transition: background 0.3s ease;
+        }
+
+        .skills span:hover {
+            background: #8f48ff;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            color: #aaa;
+            padding-bottom: 1rem;
+        }
+
+        @keyframes popIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <div class="container">
-    <div class="profile">
-      <img src="img/debora.jpg" alt="Débora Freire">
-      <h1>Débora Freire</h1>
-      <div class="tag">Dev Full Stack</div>
-      <p>São Paulo - SP | deborafreiresoares@outlook.com | (11) 98812-3451</p>
-    </div>
-
-    <div class="section">
-      <h2>Sobre Mim</h2>
-      <p>Profissional na área de TI com experiência em suporte técnico, desenvolvimento de sistemas e infraestrutura. Conhecimento em PHP, Laravel, React.js, MySQL, Active Directory, Google Workspace e Linux Red Hat.</p>
-    </div>
-
-    <div class="section">
-      <h2>Formação</h2>
-      <ul>
-        <li>Faculdade das Américas – Análise e Desenvolvimento de Sistemas (2021 - 2023)</li>
-        <li>ETEC – Desenvolvimento de Sistemas (2019 - 2020)</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>Experiência</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>DXC Technology - Infraestrutura III</h3>
-          <p>Suporte a hardware/software, instalação, Red Hat, registros em sistema de chamados.</p>
+    <div class="container">
+        <div class="profile fade-in">
+            <img src="img/debora.jpg" alt="Débora Freire">
+            <h1>Débora Freire</h1>
+            <div class="tag">Dev Full Stack</div>
+            <p>São Paulo - SP | deborafreiresoares@outlook.com | (11) 98812-3451</p>
         </div>
-        <div class="card">
-          <h3>VS Telecom - Analista de Sistemas Jr</h3>
-          <p>Laravel, Blade, React.js, consumo de APIs, sprints.</p>
+
+        <div class="section fade-in">
+            <h2>Sobre Mim</h2>
+            <p>Profissional na área de TI com experiência em suporte técnico, desenvolvimento de sistemas e
+                infraestrutura. Conhecimento em PHP, Laravel, React.js, MySQL, Active Directory, Google Workspace e
+                Linux Red Hat.</p>
         </div>
-        <!-- Adicione os outros cargos aqui -->
-      </div>
+
+        <div class="section fade-in">
+            <h2>Formação</h2>
+            <ul>
+                <li>Faculdade das Américas – Análise e Desenvolvimento de Sistemas (2021 - 2023)</li>
+                <li>ETEC – Desenvolvimento de Sistemas (2019 - 2020)</li>
+            </ul>
+        </div>
+
+        <div class="section fade-in">
+            <h2>Experiência</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>DXC Technology - Analista de Infraestrutura III</h3>
+                    <p>Atuação no cliente Itaú na área da ITech, resolvendo chamados técnicos e apoiando a implementação
+                        de novas soluções, como o Manchester. Participei de reuniões para melhorias no atendimento e
+                        desempenho como ponto focal em problemas relacionados ao Linux (Red Hat).</p>
+                </div>
+
+                <div class="card">
+                    <h3>VS Telecom - Analista de Sistemas Jr</h3>
+                    <p>Atuei no desenvolvimento e manutenção do sistema de ambulâncias do Hospital das Clínicas, criando
+                        documentações técnicas como diagramas UML, casos de uso e participando da implementação de um
+                        novo sistema CRM em desenvolvimento. Tecnologias: Laravel, Blade, React.js e consumo de APIs.
+                        Participação em sprints.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section fade-in">
+            <h2>Habilidades</h2>
+            <div class="skills">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span>
+                <span>PHP</span><span>Laravel</span><span>MySQL</span><span>Linux Red Hat</span>
+                <span>Git</span><span>Active Directory</span><span>Google Workspace</span>
+            </div>
+        </div>
+
+        <div class="section fade-in">
+            <h2>Projetos</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Nihongo-san</h3>
+                    <p>Jogos educativos para iniciantes em japonês.</p>
+                    <p><strong>Tecnologias:</strong> React, PHP, MySQL</p>
+                </div>
+                <div class="card">
+                    <h3>Sistema de Estoque em Java</h3>
+                    <p>Controle de produtos, entradas e saídas.</p>
+                    <p><strong>Tecnologias:</strong> Java, MySQL</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            &copy; 2025 Débora Freire. Todos os direitos reservados.
+        </footer>
     </div>
 
-    <div class="section">
-      <h2>Habilidades</h2>
-      <div class="skills">
-        <span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span>
-        <span>PHP</span><span>Laravel</span><span>MySQL</span><span>Linux Red Hat</span>
-        <span>Git</span><span>Active Directory</span><span>Google Workspace</span>
-      </div>
-    </div>
+    <script>
+        const faders = document.querySelectorAll('.fade-in');
 
-    <div class="section">
-      <h2>Projetos</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Nihongo-san</h3>
-          <p>Jogos educativos para iniciantes em japonês.</p>
-          <p><strong>Tecnologias:</strong> React, PHP, MySQL</p>
-        </div>
-        <div class="card">
-          <h3>Sistema de Estoque em Java</h3>
-          <p>Controle de produtos, entradas e saídas.</p>
-          <p><strong>Tecnologias:</strong> Java, MySQL</p>
-        </div>
-      </div>
-    </div>
+        const appearOptions = {
+            threshold: 0.2,
+            rootMargin: "0px 0px -50px 0px"
+        };
 
-    <footer>
-      &copy; 2025 Débora Freire. Todos os direitos reservados.
-    </footer>
-  </div>
+        const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add("show");
+                observer.unobserve(entry.target);
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+    </script>
 </body>
+
 </html>
