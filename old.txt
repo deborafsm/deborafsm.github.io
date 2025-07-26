@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Débora Freire</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #230e25;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 2rem;
+      text-align: center;
+      background-color: #1e1e1e;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    header span {
+      color: #623480;
+    }
+
+    .about {
+      text-align: center;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 2rem;
+      color: #fff;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+
+    .card {
+      background: #1e1e1e;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      color: #623480;
+      margin-bottom: 0.5rem;
+    }
+
+    .portfolio {
+      background-color: #230e25;
+      padding: 2rem;
+    }
+
+    .portfolio-item {
+      background: #1e1e1e;
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .portfolio-item img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #1e1e1e;
+      margin-top: 2rem;
+      color: #aaa;
+    }
+
+    .tech-icons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .tech-icons img {
+      width: 30px;
+      height: 30px;
+      /* filter: brightness(0) invert(1); */
+      /* Deixa branco em fundo escuro */
+      transition: transform 0.3s;
+    }
+
+    .tech-icons img:hover {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Olá meu nome é: <span>Débora Freire</span><br />DEV Full Stack.</h1>
+  </header>
+
+  <section class="about">
+    <p></p>
+  </section>
+
+  <h2 class="section-title">Minhas Habilidades</h2>
+  <section class="cards">
+    <div class="card">
+      <h3>Desenvolvimento Front-End</h3>
+      <p>Criação de interfaces modernas com HTML, CSS, JavaScript e frameworks como
+        React..</p>
+    </div>
+    <div class="card">
+      <h3>Desenvolvimento Back-End</h3>
+      <p>Desenvolvimento de APIs e sistemas com PHP LARAVEL.</p>
+    </div>
+    <div class="card">
+      <h3>Modelagem de Banco de Dados</h3>
+      <p>Criação e otimização de bases de dados relacionais com foco em desempenho, normalização e integridade.</p>
+    </div>
+    <div class="card">
+      <h3>Integrações com API</h3>
+      <p>Conexão com serviços externos (como mapas, pagamentos e redes sociais).</p>
+    </div>
+  </section>
+
+  <h2 class="section-title">Alguns projetos</h2>
+  <section class="cards portfolio">
+    <div class="portfolio-item">
+      <img src="img/nihongo.png" alt="Project 1">
+      <h3>Nihongo-san</h3>
+      <p>Jogos educacionais interativos para auxiliar no aprendizado da língua japonesa, voltado para iniciantes.</p>
+
+      <div class="tech-icons">
+        <img src="img/react.png" alt="React">
+        <img src="img/php.png" alt="PHP">
+        <img src="img/mysql.png" alt="MySQL">
+      </div>
+    </div>
+
+    <div class="portfolio-item">
+      <img src="img/estoque.PNG" alt="Sistema de Estoque em Java" class="Project 2">
+      <h3>Sistema de Estoque em Java</h3>
+      <p>Aplicação desktop com cadastro de produtos, controle de entradas/saídas e geração de relatórios.</p>
+
+      <div class="tech-icons">
+        <img src="img/java.png" alt="Java">
+        <img src="img/mysql.png" alt="MySQL">
+      </div>
+    </div>
+  
+  </section>
+
+  <footer>
+    &copy; 2025 Jone Lee. All rights reserved.
+  </footer>
+</body>
+
+</html>
